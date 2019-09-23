@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <style>
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body{
+    min-width:1000px;        
+    width: auto !important;  
+  }
+  
+  
+  .addBtn {
+    padding: 10px;
+    width: 50%;
+    background: #d9d9d9;
+    color: white;
+    background-color: #0D59CF;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 10px;
+  }
+  
+  
+  .addBtn:hover {
+    background-color: #bbb;
+  }
+  
+  .outerDiv{
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+  
+  .form-container{
+    /*  margin-right: auto;
+    margin-left: auto;*/
+    margin-top: 150px;
+    padding: 55px 75px 55px 75px;
+    border-radius: 15px;
+    border: 5px solid #0D59CF;
+    text-align: center;
+    background-color: #FFECD7;
+    
+    
+  }
+  
+  td.registerBT {
+    text-align: left;
+  }
+  
+  
+  .label {
+    text-align: right;
+    color: #0D59CF;
+  }
+  
+  .label_N {
+    padding-left: 70px;
+    color: #0D59CF;
+    display: inline-block;
+  }
+  
+  table {
+    min-width: 400px;
+    align-content: center;
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+  }
+  
+  table td {
+    padding-top: 15px;
+    padding-right: 5px;
+  }
+  
+  textarea {
+    height: 150px;
+    width: 225px;
+    border-color: #4C7A34;
+    border-width: 1px;
+    font-size: 17px;
+    
+  }
+  
+  input {
+    height: 30px;
+    width: 225px;
+    font-size: 17px;
+    border-color: #4C7A34;
+    border-width: 1px;
+    
+  }
+  
+  p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+  }
+  
+  
+  
+  
+  </style>
+  
+</head>
+
+<body>
+  
+  
+  <div class="outerDiv">
+    
+    <div class="form-container">
+      
+      
+      
+      <table>
+        <tr>
+          <td class="label">First Name</td>
+          <td><input type="text" id="firstname" placeholder=" First Name"></td>
+        </tr>
+        
+        <tr></tr>
+        
+        <tr>
+          <td class="label">Last Name</td>
+          <td><input type="text" id="lastname" placeholder=" Last Name"></td>
+        </tr>
+        
+        <tr></tr>
+        
+        <tr>
+          <td class="label">Email Address</td>
+          <td><input type="text" id="email" placeholder=" Email Address"></td>
+        </tr>
+        
+        <tr></tr>
+        
+        <tr>
+          <td class="label_N">Notes</td>
+          <td>
+            <textarea id="notes"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <tr></tr>
+          
+          <td></td>
+          <td class="registerBT">
+            <button id = "regis" onclick="validateForm()" class="addBtn">Register</button>
+          </td>
+        </tr>
+        
+        <tr>
+          <td></td>
+        </tr>
+        
+        
+        
+      </table>
+      
+      <p id="outputMsg"></p>
+      
+      
+      
+      <!-- <div class="form">
+      
+      <span>First name</span>
+      <input type="text" name="firstname" placeholder="First Name">
+      
+      <br>
+      <br>
+      
+      <span>Last name</span>
+      <input type="text" name="lastname" placeholder="Last Name">
+      
+      <br>
+      <br>
+      
+      <span>Email address</span>
+      
+      <input type="text" name="email" placeholder="Email Address">
+      
+      
+      <br>
+      <br>
+      <span>Notes</span>
+      <textarea name="notes"></textarea>
+      
+      <br>
+      <br>
+      <span onclick="newElement()" class="addBtn">Register</span>
+    </div> -->
+    
+    
+  </div>
+</div>
+
+</body>
+
+
+
+
+<script>
+
+function validateForm() {
+  // read in form values
+  var firstnameV = document.getElementById("firstname").value;
+  var lastnameV = document.getElementById("lastname").value;
+  var emailV = document.getElementById("email").value;
+  var notesV = document.getElementById("notes").value;
+  
+  
+  // if first name field has text
+  if (firstnameV == "") {
+    document.getElementById("outputMsg").innerHTML = "First Name cannot be empty.";
+    outputMsg.style.color = "red";
+  }
+  // if all first name field has text
+  else if (lastnameV == "") {
+    document.getElementById("outputMsg").innerHTML = "Last Name cannot be empty.";
+    outputMsg.style.color = "red";
+  }
+  else if (emailV == "") {
+    document.getElementById("outputMsg").innerHTML = "Email cannot be empty.";
+    outputMsg.style.color = "red";
+  }
+  else if (notesV == "") {
+    document.getElementById("outputMsg").innerHTML = "Notes cannot be empty.";
+    outputMsg.style.color = "red";
+  }
+  else{
+     document.getElementById("outputMsg").innerHTML = "Validation successful.";
+     outputMsg.style.color = "green";
+  }
+}
+
+
+
+
+
+</script>
+
+</html>
